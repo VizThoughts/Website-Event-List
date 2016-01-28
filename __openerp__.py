@@ -18,7 +18,7 @@
 #                                                                            #
 
 {
-    "name": "WebSite Event Table",
+    "name": "WebSite Event List",
     "version": "1.0",
     "depends": ["website_event_sale","event_sale"],
     "author": "sum1201@163.com",
