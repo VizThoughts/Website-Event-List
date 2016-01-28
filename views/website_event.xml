@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data>
+        <template id="assets_frontend" name="event assets" inherit_id="website.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/websit_event_table/static/src/css/widget_event.css"/>
+            </xpath>
+        </template>
+
+
+        <template id="index" inherit_id="website_event_sale.index" name="Event Table">
+            <xpath expr="//div/div/ul[@class='media-list']" position="replace">
+                <ul class="media-list">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Course ID</th>
+                                <th>Location</th>
+                                <th>Date</th>
+                                <th>Duration</th>
+                                <th>Cost</th>
+                                <th>Seats</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="event_ids" t-as="e">
+                                <tr>
+                                    <td>
+                                        <a itemprop="url" t-att-class="e.state == 'done' and 'text-success'"
+                                           t-attf-href="/event/#{ slug(e) }/#{(not e.menu_id) and 'register' or ''}">
+                                            <span itemprop="name" t-field="e.name"></span>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <span t-field="e.address_id.city"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="e.date_begin"
+                                              t-field-options="{&quot;format&quot;: &quot;dd/MMM/yyyy&quot;}"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="e.duration_day"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="e.price"/>
+                                    </td>
+                                    <td>
+                                        <div class="progress" style="background:red">
+                                            <div class="progress-bar progress-bar-success"
+                                                 role="progressbar"
+                                                 t-att-aria-valuenow="e.seats_used" aria-valuemin="0"
+                                                 aria-valuemax="100"
+                                                 t-att-style="'width:'+str(e.seats_used*100/e.seats_max)+'%'">
+                                                <span t-esc="str(e.seats_used)+'/'+str(e.seats_max)"/>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </ul>
+            </xpath>
+        </template>
+    </data>
+</openerp>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data>
+        <record id="view_website_event_table_form" model="ir.ui.view">
+            <field name="name">websit.event.table.form</field>
+            <field name="model">event.event</field>
+            <field name="inherit_id" ref="event.view_event_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="date_tz" position="after">
+                    <field name="duration_day"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>
