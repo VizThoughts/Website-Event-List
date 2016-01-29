@@ -36,7 +36,7 @@
                                     </td>
                                     <td>
                                         <span t-field="e.date_begin"
-                                              t-field-options="{&quot;format&quot;: &quot;dd/MMM/yyyy&quot;}"/>
+                                              t-field-options="{&quot;format&quot;: &quot;dd/mm/yyyy&quot;}"/>
                                     </td>
                                     <td>
                                         <span t-field="e.duration_day"/>
@@ -50,7 +50,7 @@
                                                  role="progressbar"
                                                  t-att-aria-valuenow="e.seats_used" aria-valuemin="0"
                                                  aria-valuemax="100"
-                                                 t-att-style="'width:'+str(e.seats_used*100/e.seats_max)+'%'">
+                                                 t-att-style="'width:'+str((e.seats_max-e.seats_used)*100/e.seats_max)+'%'">
                                                 <span t-esc="str(e.seats_used)+'/'+str(e.seats_max)"/>
                                             </div>
                                         </div>
