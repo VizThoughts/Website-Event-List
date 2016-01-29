@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 #                                                                            #
 #   OpenERP Module                                                           #
-#   Copyright (C) 2013 Author <email@email.fr>                               #
+#   Copyright (C) 2016 Vizthoughts <info@vizthoughts.com>                               #
 #                                                                            #
 #   This program is free software: you can redistribute it and/or modify     #
 #   it under the terms of the GNU Affero General Public License as           #

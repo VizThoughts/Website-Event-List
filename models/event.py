@@ -22,9 +22,9 @@ class event_event(models.Model):
         days=(date_end-date_begin).days
         hour=(date_end-date_begin).seconds/3600
         if days>0:
-            self.duration_day=str(days)+"天"+str(hour)+'小时'
+            self.duration_day=str(days)+"Days"
         else:
-            self.duration_day=str(hour)+'小时'
+            self.duration_day=str(hour)+'Hours'
 
     @api.one
     @api.depends('event_ticket_ids')
