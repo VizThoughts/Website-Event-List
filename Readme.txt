@@ -1,0 +1,1 @@
+This is an addon for Odoo website Event which will display all the events into list with ID, city, starting date, duration, seats.
