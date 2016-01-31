@@ -19,10 +19,10 @@
 
 {
     "name": "Website Event List",
-    "version": "1.0",
+    "version": "8.0.1.0",
     "depends": ["website_event_sale","event_sale"],
-    "author": "sum1201@163.com",
-    "category": "",
+    "author": "Vizthoughts Consultancy, sum1201@163.com",
+    "category": "Website",
     "description": """
     """,
     "data":[
